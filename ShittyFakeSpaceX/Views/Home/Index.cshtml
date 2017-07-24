@@ -1,0 +1,165 @@
+﻿@model IEnumerable<ShittyFakeSpaceX.Models.Flight>
+
+<div class="wrapper">
+    <div class="header page-header-image" style="background-image: url('../images/mar2.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="title">Welcome to ShittyFake SpaceX program.</h1>
+                    <h5 style="font-family:Courier New, Courier, monospace;font-size:medium">The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets.With us you can visit Mars, Neptune and Venice. </h5>
+                    <br />
+                    <a href="https://www.youtube.com/watch?v=ANv5UfZsvZQ" class="btn btn-danger btn-raised btn-lg">
+                        <i class="fa fa-play"></i> Watch video
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 text-center">
+                    <h5 class="description">In 2017, SpaceX successfully achieved the first reflight of an orbital class rocket – a historic milestone on the road to full and rapid rocket reusability.</h5>
+                </div>
+            </div>
+            <div class="section-story-overview">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="image-container image-left">
+                            <!-- First image on the left side -->
+                            <img src="../images/spacex.jpg" alt="" class="rounded img-fluid img-raised">
+                            <p class="blockquote blockquote-reverse">
+                                "You need to live in a dome initially, but over time you could terraform Mars to look like Earth and eventually walk around outside without anything on... So it's a fixer-upper of a planet."
+                                <br>
+                                <br>
+                                <small>-Elon Musk</small>
+                            </p>
+                        </div>
+                        <!-- Second image on the left side of the article -->
+                        <div class="image-container">
+                            <img src="../images/start.jpg" alt="" class="img-fluid rounded img-raised">
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <!-- First image on the right side, above the article -->
+                        <div class="image-container image-right">
+                            <img src="../images/fh2.jpg" alt="" class="rounded img-fluid img-raised">
+                        </div>
+                        <h3>What SpaceX's Successful Reusable Rocket Launch Means For the Space Industry and Humanity</h3>
+                        <p>
+                            SpaceX is flying numerous cargo resupply missions to the International Space Station, for a total of at least 20 flights under the Commercial Resupply Services contract. In 2016, NASA awarded SpaceX a second version of that contract that will cover a minimum of 6 additional flights from 2019 onward.
+                        </p>
+                        <p>
+                            Dragon was designed from the outset to carry astronauts to space, and as early as 2018, SpaceX will carry crew as part of NASA's Commercial Crew Program.  SpaceX is the world’s fastest-growing provider of launch services and has over 70 future missions on its manifest, representing over $10 billion in contracts. These include commercial satellite launches as well as NASA and other US Government missions.
+                        </p>
+                        <p>
+                            Currently under development is the Falcon Heavy, which will be the world’s most powerful rocket. All the while, SpaceX continues to work toward one of its key goals—developing fully and rapidly reusable rockets, a feat that will transform space exploration by delivering highly reliable vehicles at radically reduced costs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Table" class="section">
+        <br />
+        <div class="container-fluid">
+            <div class="row">
+                <div class=" col-md-8 offset-md-2 text-center">
+                    <div class="title text-center"><h2>Flight Schedule</h2></div><br />
+                    <div class="fresh-table fixed-table-body table-hover full-color-azure">
+                        <table class="table">
+                            <thead class="text-uppercase"><tr><td><h6>Time</h6></td><td><h6>Planet</h6></td><td><h6>Station</h6></td><td><h6>Flight Number</h6></td><td><h6>Terminal</h6></td><td><h6>Status</h6></td></tr></thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr><td>@item.Time</td><td>@item.Planet</td><td>@item.Station</td><td>@item.FlightNumber</td><td>@item.Terminal</td><td>@item.Status</td></tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Service" class="section section-team text-center">
+        <div class="container">
+            <h2 class="title">Not sure where to go?</h2><br />
+            <div class="team">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="team-player">
+                            <img src="../images/venus2.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised" />
+                            <h4 class="title">Venus</h4>
+                            <p class="description">Venus is the second planet from the Sun, orbiting it every 224.7 Earth days. It has the longest rotation period of any planet in the Solar System and rotates in the opposite direction to most other planets.</p>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal2">More Info</button>
+                            <div id="myModal2" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Venus</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Venus is one of the four terrestrial planets in the Solar System, meaning that it is a rocky body like Earth. It is similar to Earth in size and mass, and is often described as Earth's "sister" or "twin". The diameter of Venus is 12,092 km (7,514 mi)—only 650 km (404 mi) less than Earth's—and its mass is 81.5% of Earth's. Conditions on the Venusian surface differ radically from those on Earth because its dense atmosphere is 96.5% carbon dioxide, with most of the remaining 3.5% being nitrogen.
+                                                About 80% of the Venusian surface is covered by smooth, volcanic plains, consisting of 70% plains with wrinkle ridges and 10% smooth or lobate plains. Two highland "continents" make up the rest of its surface area, one lying in the planet's northern hemisphere and the other just south of the equator. The northern continent is called Ishtar Terra, after Ishtar the Babylonian goddess of love, and is about the size of Australia. Maxwell Montes, the highest mountain on Venus, lies on Ishtar Terra. Its peak is 11 km (7 mi) above the Venusian average surface elevation. The southern continent is called Aphrodite Terra, after the Greek goddess of love, and is the larger of the two highland regions at roughly the size of South America. A network of fractures and faults covers much of this area.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="team-player">
+                            <img src="../images/mars3.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised" />
+                            <h4 class="title">Mars</h4>
+                            <p class="description">Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, after Mercury.Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.</p>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">More Info</button>
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header ">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title text-center" id="myModalLabel">Mars</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            Mars is approximately half the diameter of Earth with a surface area only slightly less than the total area of Earth's dry land. Mars is less dense than Earth, having about 15% of Earth's volume and 11% of Earth's mass, resulting in about 38% of Earth's surface gravity. The red-orange appearance of the Martian surface is caused by iron(III) oxide, or rust. It can look like butterscotch; other common surface colors include golden, brown, tan, and greenish, depending on the minerals present.
+                                            Mars is a terrestrial planet that consists of minerals containing silicon and oxygen, metals, and other elements that typically make up rock. The surface of Mars is primarily composed of tholeiitic basalt, although parts are more silica-rich than typical basalt and may be similar to andesitic rocks on Earth or silica glass. Regions of low albedo suggest concentrations of plagioclase feldspar, with northern low albedo regions displaying higher than normal concentrations of sheet silicates and high-silicon glass. Parts of the southern highlands include detectable amounts of high-calcium pyroxenes. Localized concentrations of hematite and olivine have been found. Much of the surface is deeply covered by finely grained iron(III) oxide dust
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="team-player">
+                            <img src="../images/22.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised" />
+                            <h4 class="title">Neptune</h4>
+                            <p class="description">Neptune is the eighth and farthest known planet from the Sun in the Solar System. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet.</p>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal3">More Info</button>
+                            <div id="myModal3" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Neptune</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Some of the earliest recorded observations ever made through a telescope, Galileo's drawings on 28 December 1612 and 27 January 1613, contain plotted points that match up with what is now known to be the position of Neptune. On both occasions, Galileo seems to have mistaken Neptune for a fixed star when it appeared close—in conjunction—to Jupiter in the night sky; hence, he is not credited with Neptune's discovery. At his first observation in December 1612, Neptune was almost stationary in the sky because it had just turned retrograde that day. This apparent backward motion is created when Earth's orbit takes it past an outer planet. Because Neptune was only beginning its yearly retrograde cycle, the motion of the planet was far too slight to be detected with Galileo's small telescope. In July 2009, University of Melbourne physicist David Jamieson announced new evidence suggesting that Galileo was at least aware that the 'star' he had observed had moved relative to the fixed stars.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

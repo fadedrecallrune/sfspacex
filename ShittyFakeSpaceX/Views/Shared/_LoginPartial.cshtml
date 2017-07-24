@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using ShittyFakeSpaceX.Models
+
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="nav-item">
+        <ul>
+            <li>
+                <a title="Manage">@UserManager.GetUserName(User)!</a>
+            </li>
+            <li>
+                <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
+            </li>
+        </ul>
+    </form>
+
+
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link" href="~/Account/Login">Login</a>
+    </li>
+    <li class="nav-item ">
+        <a class="nav-link" href="~/Account/Register">Create Account</a>
+    </li>
+}

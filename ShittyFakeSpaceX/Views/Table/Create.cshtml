@@ -1,0 +1,46 @@
+﻿@model ShittyFakeSpaceX.Models.Flight
+
+<form asp-action="Create" asp-controller="Table">
+    <div class="form-horizontal">
+        <h4> Flights</h4> <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+        <div class="form-group">
+            <label asp-for="Time" class="col-md-2 control-label"></label>
+            <input asp-for="Time" class="form-control" />
+            <span asp-validation-for="Time" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Planet" class="col-md-2 control-label"></label>
+            <input asp-for="Planet" class="form-control" />
+            <span asp-validation-for="Planet" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Station" class="col-md-2 control-label"></label>
+            <input asp-for="Station" class="form-control" />
+            <span asp-validation-for="Station" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="FlightNumber" class="col-md-2 control-label">Flight Number</label>
+            <input asp-for="FlightNumber" class="form-control" />
+            <span asp-validation-for="FlightNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Terminal" class="col-md-2 control-label"></label>
+            <input asp-for="Terminal" class="form-control" />
+            <span asp-validation-for="Terminal" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Status" class="col-md-2 control-label"></label>
+            <select asp-for="Status" asp-items="@Html.GetEnumSelectList<ShittyFakeSpaceX.Models.Status>()" class="form-control"></select>
+            <span asp-validation-for="Status" class=" text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-danger col-md-2" />
+        </div>
+
+    </div>
+
+
+</form>

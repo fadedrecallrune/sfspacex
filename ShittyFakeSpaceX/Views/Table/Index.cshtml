@@ -1,0 +1,34 @@
+﻿@model IEnumerable<ShittyFakeSpaceX.Models.Flight>
+
+@{
+    ViewData["Title"] = "Flights";
+}
+
+<h2>Flights overview</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+<div class="section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class=" col-md-8 offset-md-2 text-center">
+                <div class="title text-center"><h2>Flights Schedule</h2></div>
+                <div class="fresh-table fixed-table-body table-hover full-color-azure">
+                    <table class="table">
+                        <thead class="text-uppercase"><tr><td><h6>Time</h6></td><td><h6>Planet</h6></td><td><h6>Station</h6></td><td><h6>Flight Number</h6></td><td><h6>Terminal</h6></td><td><h6>Status</h6></td></tr></thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr><td>@item.Time</td><td>@item.Planet</td><td>@item.Station</td><td>@item.FlightNumber</td><td>@item.Terminal</td><td>@item.Status</td></tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

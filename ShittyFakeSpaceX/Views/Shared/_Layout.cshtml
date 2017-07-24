@@ -1,0 +1,113 @@
+﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ShittyFake SpaceX</title>
+
+    <environment names="Development">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/fresh-bootstrap-table.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="~/css/now-ui-kit.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+    </environment>
+    @Html.Raw(JavaScriptSnippet.FullScript)
+</head>
+<body class="landing-page">
+    <nav class="navbar navbar-toggleable-md bg-white fixed-top " color-on-scroll="300">
+        <div class="container">
+            <div class="dropdown button-dropdown">
+                <a href="#" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown"></a>
+            </div>
+            <div class="navbar-translate">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar bar1"></span>
+                    <span class="navbar-toggler-bar bar2"></span>
+                    <span class="navbar-toggler-bar bar3"></span>
+                </button>
+                <a class="navbar-brand" href="~/Home/Index" rel="tooltip" title="ShittyFakeSpaceX" data-placement="bottom" style="font-size:14px">
+                    ShittyFakeSpaceX
+                </a>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../images/blurred-image-1.jpg">
+                <ul class="navbar-nav navbar-logo navbar-switch"></ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/#Table">Flights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/Gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/#Service">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/About">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="">Have an issue?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link twitter-sharrre-nav" rel="tooltip" title="Tweet" data-placement="bottom" href="https://twitter.com/spacex" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                            <p class="hidden-lg-up">Twitter</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link facebook-sharrre-nav" rel="tooltip" title="Share" data-placement="bottom" href="https://www.facebook.com/SpaceX/" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                            <p class="hidden-lg-up">Facebook</p>
+                        </a>
+                    </li>
+                    @await Html.PartialAsync("_LoginPartial")
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bootstrap-switch-container">
+        @RenderBody()
+        <hr />
+        @*<footer>
+                <p class="text-center">This site is not realated to real SpaceX in any way. I don't own any rights for images and content. Please don't sue me  ( ͡° ͜ʖ ͡°) </p>
+            </footer>*@
+    </div>
+
+    <environment names="Development">
+        <script src="~/js/bootstrap-switch.js"></script>
+        <script src="~/js/bootstrap.min.js"></script>
+        <script src="~/js/now-ui-kit.js"></script>
+        <script src="~/js/tether.min.js"></script>
+        <script src="~/js/bootstrap-table.js"></script>
+        <script src="~/js/jquery.3.2.1.min.js"></script>
+
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
