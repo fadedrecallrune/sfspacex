@@ -1,1 +1,1 @@
-# shittyfakespacex.azurewebsites.com
+# http://shittyfakespacex.azurewebsites.com
